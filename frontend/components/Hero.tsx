@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 import { useAccount } from "wagmi"
 import { useConnectModal } from "@rainbow-me/rainbowkit"
@@ -10,6 +11,7 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const { isConnected } = useAccount()
   const { openConnectModal } = useConnectModal()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true);
@@ -20,8 +22,7 @@ export default function Hero() {
     if (!isConnected && openConnectModal) {
       openConnectModal();
     } else {
-      const element = document.getElementById('features');
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      router.push('/dashboard');
     }
   }
 
@@ -65,16 +66,7 @@ export default function Hero() {
 
       <div className="relative pt-40 md:pt-56 pb-20 px-6 sm:px-12 max-w-7xl mx-auto flex flex-col items-start min-h-[90vh] z-10 pointer-events-auto">
          
-         {/* Kicker */}
-         <motion.div 
-           initial={{ opacity: 0, y: 10 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-           className="flex items-center gap-4 text-white/50 font-mono text-xs uppercase tracking-widest mb-10"
-         >
-           <div className="w-8 h-[1px] bg-white/20" />
-           AgentBazaar
-         </motion.div>
+
 
          {/* Heading */}
          <motion.h1 

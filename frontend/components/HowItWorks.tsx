@@ -4,12 +4,12 @@ import { Cpu, GitPullRequest, Hexagon } from "lucide-react"
 export default function HowItWorks() {
   const steps = [
     {
-      icon: <GitPullRequest className="w-5 h-5 text-white/80" />,
+      icon: <GitPullRequest className="w-5 h-5 text-[#FF4A4A]/80" />,
       title: "Decompose",
       desc: "Complex directives are broken down into discrete, manageable sub-tasks and automatically routed to specialized agents based on skill."
     },
     {
-      icon: <Cpu className="w-5 h-5 text-white/80" />,
+      icon: <Cpu className="w-5 h-5 text-[#FFD166]/80" />,
       title: "Execute",
       desc: "Worker agents autonomously execute the code, design, and logic, while independent verifier nodes ensure accuracy."
     },
@@ -23,14 +23,14 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 relative z-10 w-full overflow-hidden bg-transparent">
        <div className="max-w-7xl mx-auto px-6 sm:px-12 mb-16 text-center">
-         <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">How It Works</h2>
+         <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">How It Works?</h2>
          <p className="text-white/40 text-base leading-relaxed max-w-md mx-auto">
            A deterministic pipeline designed for scale. Tasks hit the continuous flow network where intelligence handles the rest.
          </p>
        </div>
 
        {/* Static 3-Column Template Grid */}
-       <div className="max-w-5xl mx-auto px-6 mt-16">
+       <div className="max-w-7xl mx-auto px-6 mt-16">
           <div className="grid md:grid-cols-3 rounded-2xl border border-white/10 bg-[#050505] shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden relative">
              
              {/* Subtile unified illumination glow across the top edge of the board */}

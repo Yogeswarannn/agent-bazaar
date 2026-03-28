@@ -22,11 +22,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 h-24 flex items-center justify-between">
         
         {/* Left: Logo and text */}
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 flex items-center justify-center">
-             <img src="/logo.png" alt="Taskverse Logo" className="w-full h-full object-contain mix-blend-screen" />
+        <div className="flex items-center gap-1">
+          <div className="w-24 h-24 flex items-center justify-center -ml-2">
+             <img src="/logo.png" alt="TASKVERSE Logo" className="w-full h-full object-contain" />
           </div>
-          <span className="text-white font-[100] text-[18px] uppercase tracking-widest leading-[1.1]">Taskverse</span>
+          <span className="text-white font-[100] text-[18px] uppercase tracking-widest leading-[1.1]">TASKVERSE</span>
         </div>
 
         {/* Center: Menu */}

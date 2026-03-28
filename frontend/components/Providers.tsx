@@ -9,21 +9,33 @@ import {
 import { WagmiProvider } from 'wagmi';
 import {
   mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
+  sepolia,
 } from 'wagmi/chains';
 import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
 
+// Suppress the non-critical Reown/WalletConnect allowlist dev warning
+if (typeof window !== "undefined") {
+  const originalWarn = console.warn;
+  const originalError = console.error;
+  const SUPPRESS = ["not found on Allowlist", "Cross-Origin-Opener-Policy"];
+  console.warn = (...args: unknown[]) => {
+    if (SUPPRESS.some(msg => String(args[0]).includes(msg))) return;
+    originalWarn(...args);
+  };
+  console.error = (...args: unknown[]) => {
+    if (SUPPRESS.some(msg => String(args[0]).includes(msg))) return;
+    originalError(...args);
+  };
+}
+
 const config = getDefaultConfig({
   appName: 'Taskverse',
-  projectId: 'YOUR_PROJECT_ID', // Replace with your WalletConnect Project ID
-  chains: [mainnet, polygon, optimism, arbitrum, base],
-  ssr: true, // If your dApp uses server side rendering (SSR)
+  projectId: 'c01fe4b6ced4d48cecb1c8340d2dedad', 
+  chains: [sepolia, mainnet],
+  ssr: false, 
 });
 
 const queryClient = new QueryClient();

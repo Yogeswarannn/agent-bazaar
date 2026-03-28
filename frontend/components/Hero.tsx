@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 import { useAccount } from "wagmi"
 import { useConnectModal } from "@rainbow-me/rainbowkit"
@@ -10,6 +11,7 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const { isConnected } = useAccount()
   const { openConnectModal } = useConnectModal()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true);
@@ -19,6 +21,8 @@ export default function Hero() {
     if (!mounted) return;
     if (!isConnected && openConnectModal) {
       openConnectModal();
+    } else if (isConnected) {
+      router.push("/dashboard");
     } else {
       const element = document.getElementById('features');
       if (element) element.scrollIntoView({ behavior: 'smooth' });

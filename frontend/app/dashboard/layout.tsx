@@ -12,10 +12,17 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#050505] selection:bg-[#00FFB2]/30 font-[family-name:var(--font-outfit)]">
-      {/* Dynamic Background Noise/Glow (Subtle) */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#00FFB2]/5 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00FFB2]/5 blur-[120px] rounded-full mix-blend-screen" />
+      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full bg-gradient-to-b from-[#050505] to-[#0A0A0A]">
+         {/* Center Glow */}
+         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(255,150,50,0.15)_0%,rgba(255,50,150,0.1)_40%,rgba(50,100,255,0.05)_70%,transparent_100%)] blur-[100px] mix-blend-screen rounded-full" />
+         
+         {/* Depth Panels */}
+         <div className="absolute top-1/4 -left-32 w-[400px] h-[500px] bg-white/[0.06] blur-[60px] rounded-full rotate-45" />
+         <div className="absolute bottom-1/4 -right-32 w-[500px] h-[600px] bg-white/[0.05] blur-[80px] rounded-full -rotate-45" />
+
+         {/* Vignette & Grain */}
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#000_100%)] opacity-80 mix-blend-multiply" />
+         <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay" style={{backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E')"}}></div>
       </div>
 
       <div className="relative z-10 pt-[100px] pb-20 px-4 sm:px-8 max-w-[1400px] mx-auto min-h-screen flex flex-col">

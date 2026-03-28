@@ -21,7 +21,7 @@ import {
 
 const config = getDefaultConfig({
   appName: 'Taskverse',
-  projectId: 'YOUR_PROJECT_ID', // Replace with your WalletConnect Project ID
+  projectId: 'c03e85e48ae1de56ebcc7a8800ff8305', // A 32-character hex string so Wagmi validation passes
   chains: [mainnet, polygon, optimism, arbitrum, base],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });

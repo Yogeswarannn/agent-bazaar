@@ -1,0 +1,6 @@
+export const SEPOLIA_ADDRESSES = {
+  JobManager: '0x96eD7B6727fadd8AbE1CC4C18Fa8ebb800E013B9',
+  TaskContract: '0x18A496C48cE8A36a1bf2F3697f387A29377C1C43',
+  BiddingContract: '0x448a7d0Fd8e24a12647e0fa6C6e8A1748C7f4D97',
+  VerificationContract: '0xc177FF86b37e90674509fA4B7ab6Cd3AD973d8a0',
+} as const;
